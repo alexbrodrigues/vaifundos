@@ -44,7 +44,7 @@
     <Compile Include="Aplicação.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Fundo_de_Investimento.cs" />
-    <Compile Include="Fundo_Investiemento_Dolar.cs" />
+    <Compile Include="Fundo_Investimento_Dolar.cs" />
     <Compile Include="Fundo_Investimento_Real.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
