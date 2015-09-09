@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vaifundos
 {
-    class Fundo_Investimento_Real
+    class Fundo_Investimento_Real: Fundo_de_Investimento
     {
         private float imposto;
 
