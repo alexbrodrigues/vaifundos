@@ -11,6 +11,7 @@ namespace Vaifundos
         static void Main(string[] args)
         {
             List<Clientes> List_cliente;
+            Clientes teste = null;
             int opcao = 0;
             Console.WriteLine("*******      Bem Vindo ao Sistema Vai Fundos     *******");
             Console.WriteLine("Se deseja efetuar cadastro de cliente digite 1.");

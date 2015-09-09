@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vaifundos
 {
-    enum Tipo { Dólar, Real }
+    
     class Fundo_de_Investimento
     {
         private string nome;
@@ -23,12 +23,15 @@ namespace Vaifundos
             get { return sigla; }
             set { sigla = value; }
         }
-        private Enum tipo;
 
-        public Enum Tipo
-        {
-            get { return tipo; }
-            set { tipo = value; }
-        }
+        private List<Aplicação> aplicacoes;
+
+internal List<Aplicação> Aplicacoes
+{
+  get { return aplicacoes; }
+  set { aplicacoes = value; }
+}
+
+
     }
 }
