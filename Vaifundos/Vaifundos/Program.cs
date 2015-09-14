@@ -17,6 +17,7 @@ namespace Vaifundos
             Clientes clientecadastro = null;
             Aplicação aplicationClient = null;
             List<Aplicação> list_aplication = new List<Aplicação>();
+            string siglafundo = string.Empty;
             int opcaoaplicacaofundo = 0;
             int idcliente = 0;
             int cont = 0;
@@ -54,7 +55,13 @@ namespace Vaifundos
                         Console.WriteLine("Insira o nome do fundo:");
                         fundi_real.Nome = Console.ReadLine();
                         Console.WriteLine("Entre com a Sigla que será usada no Fundo:");
-                        fundi_real.Sigla = Console.ReadLine();
+                        siglafundo =  Console.ReadLine();
+                        while (Fundo_de_Investimento.VerificaSigla(list_fundo, siglafundo))
+                        {
+                            Console.WriteLine("Esta Sigla ja está sendo usada! Entre com outra.");
+                            siglafundo = Console.ReadLine();
+                        }
+                        fundi_real.Sigla = siglafundo;
                         Console.WriteLine("Deseja efetuar novo Cadastro? Se sim insira 1 novamente");
                         opcaofundo = Convert.ToInt32(Console.ReadLine());
                         list_fundo.Add(fundi_real);
@@ -65,7 +72,12 @@ namespace Vaifundos
                         Console.WriteLine("Insira o nome do fundo:");
                         fundi_dolar.Nome = Console.ReadLine();
                         Console.WriteLine("Entre com a Sigla que será usada no Fundo:");
-                        fundi_dolar.Sigla = Console.ReadLine();
+                        while (Fundo_de_Investimento.VerificaSigla(list_fundo, siglafundo))
+                        {
+                            Console.WriteLine("Esta Sigla ja está sendo usada! Entre com outra.");
+                            siglafundo = Console.ReadLine();
+                        }
+                        fundi_dolar.Sigla = siglafundo;
                         Console.WriteLine("Deseja efetuar novo Cadastro? Se sim insira 2 novamente");
                         opcaofundo = Convert.ToInt32(Console.ReadLine());
                         list_fundo.Add(fundi_dolar);
@@ -95,6 +107,9 @@ namespace Vaifundos
                     {
                         fundi_dolar = new Fundo_Investimento_Dolar();
                         Fundo_de_Investimento.ImprimirFundo(list_fundo);
+                        Console.WriteLine("Escolha a Sigla da Lista de Fundos que deseja Aplicar:");
+                        siglafundo = Console.ReadLine();
+                        Fundo_de_Investimento.BuscaFundo(list_fundo,siglafundo);
 
                     }
                 }

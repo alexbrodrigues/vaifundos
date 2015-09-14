@@ -32,7 +32,7 @@ namespace Vaifundos
 
         public static Clientes BuscaCliente(List<Clientes> busca, int id)
         {
-            for (int i = 0; i < busca.Count; i++)
+            for (int i = 0; i < busca.Count(); i++)
             {
                 if (busca[i].getsetid == id)
                 {
