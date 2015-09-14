@@ -17,7 +17,7 @@ namespace Vaifundos
         }
         private int id;
 
-        public int Id
+        public int getsetid
         {
             get { return id; }
             set { id = value; }
@@ -28,6 +28,18 @@ namespace Vaifundos
         {
             get { return Lista_Fundo; }
             set { Lista_Fundo = value; }
+        }
+
+        public static Clientes BuscaCliente(List<Clientes> busca, int id)
+        {
+            for (int i = 0; i < busca.Count; i++)
+            {
+                if (busca[i].getsetid == id)
+                {
+                    return busca[i];
+                }
+            }
+            return null;
         }
     }
 }

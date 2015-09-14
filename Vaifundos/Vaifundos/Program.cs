@@ -15,10 +15,15 @@ namespace Vaifundos
             Fundo_Investimento_Real fundi_real;
             Fundo_Investimento_Dolar fundi_dolar;
             Clientes clientecadastro = null;
+            Aplicação aplicationClient = null;
+            List<Aplicação> list_aplication = new List<Aplicação>();
+            int opcaoaplicacaofundo = 0;
+            int idcliente = 0;
             int cont = 0;
             int opcaoinicial = 0;
             int opcaofundo = 0;
             int opcao = 0;
+            int opcaocliente = 0;
 
 
             Console.WriteLine("*******      Bem Vindo ao Sistema Vai Fundos     *******");
@@ -33,7 +38,7 @@ namespace Vaifundos
                     clientecadastro = new Clientes();
                     Console.WriteLine("Entre com o nome do Cliente:");
                     clientecadastro.Nome = Console.ReadLine();
-                    clientecadastro.Id = cont;
+                    clientecadastro.getsetid = cont;
                     cont++;
                     Console.WriteLine("Deseja efetuar novo Cadastro? Se sim insira 1 novamente");
                     Console.WriteLine("Se deseja efetuar cadastro de fundo digite 2.");
@@ -68,10 +73,33 @@ namespace Vaifundos
                     
                 }
             }
-            if (opcao == 2)
+            if (opcaoinicial == 2)
             {
+                Console.WriteLine("Se deseja efetuar Aplicação digite 1.");
+                Console.WriteLine("Se deseja efetuar Resgate digite 2.");
+                Console.WriteLine("Se deseja transferir de um Fundo para outro digite 3.");
+                while (opcaocliente == 1)
+                {
+                    aplicationClient = new Aplicação();
+                    Console.WriteLine("Insira o seu ID:");
+                    idcliente = Convert.ToInt32( Console.ReadLine());
+                    Clientes.BuscaCliente(list_cliente,idcliente);
+                    Console.WriteLine("Insira o valor que deseja aplicar");
+                    aplicationClient.Valor = float.Parse(Console.ReadLine());
+                    aplicationClient.Data_aplicacao = DateTime.Now;
+                    list_aplication.Add(aplicationClient);
+                    Console.WriteLine(" Se deseja efetuar a aplicação no Fundo de Investimento Dólar digite 1.");
+                    Console.WriteLine(" Se deseja efetuar a aplicação no Fundo de Investimento Real digite 2.");
+                    opcaoaplicacaofundo = Convert.ToInt32(Console.ReadLine());
+                    if (opcaoaplicacaofundo == 1)
+                    {
+                        fundi_dolar = new Fundo_Investimento_Dolar();
+                        Fundo_de_Investimento.ImprimirFundo(list_fundo);
 
+                    }
+                }
             }
+
         }
     }
 }

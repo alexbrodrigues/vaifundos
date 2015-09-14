@@ -22,7 +22,7 @@ namespace Vaifundos
             get { return valor; }
             set { valor = value; }
         }
-        private float rendimento;
+        private float rendimento = 0;
 
         public float Rendimento
         {
