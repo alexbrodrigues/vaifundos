@@ -112,6 +112,15 @@ namespace Vaifundos
                         Fundo_de_Investimento.BuscaFundo(list_fundo,siglafundo);
 
                     }
+                    if (opcaoaplicacaofundo == 2)
+                    {
+                        fundi_real = new Fundo_Investimento_Real();
+                        Fundo_de_Investimento.ImprimirFundo(list_fundo);
+                        Console.WriteLine("Escolha a Sigla da Lista de Fundos que deseja Aplicar:");
+                        siglafundo = Console.ReadLine();
+                        Fundo_de_Investimento.BuscaFundo(list_fundo, siglafundo);
+
+                    }
                 }
             }
 
