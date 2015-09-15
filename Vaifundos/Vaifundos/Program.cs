@@ -147,6 +147,7 @@ namespace Vaifundos
                     Console.WriteLine("Insira o seu ID:");
                     idcliente = Convert.ToInt32(Console.ReadLine());
                     Clientes.BuscaCliente(list_cliente, idcliente);
+
                 }
             }
 
