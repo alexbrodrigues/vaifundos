@@ -90,12 +90,17 @@ namespace Vaifundos
                 Console.WriteLine("Se deseja efetuar Aplicação digite 1.");
                 Console.WriteLine("Se deseja efetuar Resgate digite 2.");
                 Console.WriteLine("Se deseja transferir de um Fundo para outro digite 3.");
+                opcaocliente = Convert.ToInt32(Console.ReadLine());
                 while (opcaocliente == 1)
                 {
                     aplicationClient = new Aplicação();
+                    Console.WriteLine("Bem Vindo a Tela de Aplicação.");
                     Console.WriteLine("Insira o seu ID:");
-                    idcliente = Convert.ToInt32( Console.ReadLine());
-                    Clientes.BuscaCliente(list_cliente,idcliente);
+                    while (!(Clientes.verificaId(list_cliente, idcliente)))
+                    {
+                        Console.WriteLine("Esta Id não exite! Entre com outro:");
+                        idcliente = Convert.ToInt32(Console.ReadLine());
+                    }
                     Console.WriteLine("Insira o valor que deseja aplicar");
                     aplicationClient.Valor = float.Parse(Console.ReadLine());
                     aplicationClient.Data_aplicacao = DateTime.Now;
@@ -109,7 +114,13 @@ namespace Vaifundos
                         Fundo_de_Investimento.ImprimirFundo(list_fundo);
                         Console.WriteLine("Escolha a Sigla da Lista de Fundos que deseja Aplicar:");
                         siglafundo = Console.ReadLine();
-                        Fundo_de_Investimento.BuscaFundo(list_fundo,siglafundo);
+                        while (!(Fundo_de_Investimento.VerificaSigla(list_fundo, siglafundo)))
+                        {
+                            Console.WriteLine("Esta Sigla não exite! Entre com outra:");
+                            siglafundo = Console.ReadLine();
+                        }
+                        Fundo_de_Investimento.BuscaFundo(list_fundo,siglafundo).Aplicacoes.Add(aplicationClient);
+                        Clientes.BuscaCliente(list_cliente, idcliente).Lista_Fundo1.Add(Fundo_de_Investimento.BuscaFundo(list_fundo, siglafundo));
 
                     }
                     if (opcaoaplicacaofundo == 2)
@@ -117,10 +128,25 @@ namespace Vaifundos
                         fundi_real = new Fundo_Investimento_Real();
                         Fundo_de_Investimento.ImprimirFundo(list_fundo);
                         Console.WriteLine("Escolha a Sigla da Lista de Fundos que deseja Aplicar:");
-                        siglafundo = Console.ReadLine();
-                        Fundo_de_Investimento.BuscaFundo(list_fundo, siglafundo);
-
+                        while (!(Fundo_de_Investimento.VerificaSigla(list_fundo, siglafundo)))
+                        {
+                            Console.WriteLine("Esta Sigla não exite! Entre com outra:");
+                            siglafundo = Console.ReadLine();
+                        }
+                        Fundo_de_Investimento.BuscaFundo(list_fundo, siglafundo).Aplicacoes.Add(aplicationClient);
+                        Clientes.BuscaCliente(list_cliente, idcliente).Lista_Fundo1.Add(Fundo_de_Investimento.BuscaFundo(list_fundo, siglafundo));
                     }
+                    Console.WriteLine("Se deseja efetuar Aplicação digite 1.");
+                    Console.WriteLine("Se deseja efetuar Resgate digite 2.");
+                    Console.WriteLine("Se deseja transferir de um Fundo para outro digite 3.");
+                    opcaocliente = Convert.ToInt32(Console.ReadLine());
+                }
+                while (opcaoaplicacaofundo == 2)
+                {
+                    Console.WriteLine("Bem VIndo a Tela de Resgate.");
+                    Console.WriteLine("Insira o seu ID:");
+                    idcliente = Convert.ToInt32(Console.ReadLine());
+                    Clientes.BuscaCliente(list_cliente, idcliente);
                 }
             }
 

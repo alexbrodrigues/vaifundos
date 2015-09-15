@@ -9,14 +9,14 @@ namespace Vaifundos
     
     class Fundo_de_Investimento
     {
-        private string nome;
+        protected string nome;
 
         public string Nome
         {
             get { return nome; }
             set { nome = value; }
         }
-        private string sigla;
+        protected string sigla;
 
         public string Sigla
         {
@@ -24,7 +24,7 @@ namespace Vaifundos
             set { sigla = value; }
         }
 
-        private List<Aplicação> aplicacoes;
+        protected List<Aplicação> aplicacoes;
 
 internal List<Aplicação> Aplicacoes
 {

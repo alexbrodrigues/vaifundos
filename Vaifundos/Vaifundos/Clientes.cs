@@ -41,5 +41,16 @@ namespace Vaifundos
             }
             return null;
         }
+        public static bool verificaId(List<Clientes> verifica, int id)
+        {
+            for (int i = 0; i < verifica.Count(); i++)
+            {
+                if (verifica[i].id.Equals(id))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
