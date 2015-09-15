@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vaifundos
 {
+
     class Aplicação
     {
         private DateTime data_aplicacao;
@@ -28,6 +29,12 @@ namespace Vaifundos
         {
             get { return rendimento; }
             set { rendimento = value; }
+        }
+       
+
+        public static void Resgatar(List<Aplicação> resgatar, float valorresgatado)
+        {
+
         }
     }
 }
