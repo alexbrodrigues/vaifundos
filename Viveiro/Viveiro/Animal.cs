@@ -13,5 +13,65 @@ namespace Viveiro
         private float peso;
         private float capEstomago;
 
+        public string Nome
+        {
+            get
+            {
+                return nome;
+            }
+
+            set
+            {
+                nome = value;
+            }
+        }
+
+        public DateTime DataNascimento
+        {
+            get
+            {
+                return dataNascimento;
+            }
+
+            set
+            {
+                dataNascimento = value;
+            }
+        }
+
+        public float Peso
+        {
+            get
+            {
+                return peso;
+            }
+
+            set
+            {
+                peso = value;
+            }
+        }
+
+        public float CapEstomago
+        {
+            get
+            {
+                return capEstomago;
+            }
+
+            set
+            {
+                capEstomago = value;
+            }
+        }
+
+        public int Idade(Animal dLaboratorio , DateTime dataatual)
+        {
+
+            int Idade = dataatual.Year - dLaboratorio.DataNascimento.Year;
+            return Idade;
+        }
+
+        public abstract Boolean Comer(float qtd);
     }
 }
