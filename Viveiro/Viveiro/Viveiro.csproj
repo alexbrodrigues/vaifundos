@@ -47,6 +47,7 @@
     <Compile Include="Gato.cs" />
     <Compile Include="Gavião.cs" />
     <Compile Include="Mamifero.cs" />
+    <Compile Include="Ordena.cs" />
     <Compile Include="Passaro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
