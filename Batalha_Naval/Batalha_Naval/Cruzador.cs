@@ -39,7 +39,10 @@ namespace Batalha_Naval
                     }
                     else
                     {
-
+                        if (this.Estado.Equals(EstadoNavio.Perfeito))
+                        {
+                            War_ship.Blindagem = War_ship.Blindagem - atacar;
+                        }
                     }
                 }
             }
