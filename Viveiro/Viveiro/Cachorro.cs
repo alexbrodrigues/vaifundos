@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Viveiro
 {
-    class Program
+    class Cachorro: Mamifero
     {
-        static void Main(string[] args)
-        {
-           
-        }
+        private string raca;
+        private Boolean castrado;
     }
 }

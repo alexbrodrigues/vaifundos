@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Viveiro
 {
-    class Program
+    class Curio: Passaro
     {
-        static void Main(string[] args)
-        {
-           
-        }
+
     }
 }

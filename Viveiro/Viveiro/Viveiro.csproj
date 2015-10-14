@@ -42,11 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
+    <Compile Include="Cachorro.cs" />
+    <Compile Include="Curio.cs" />
+    <Compile Include="Gato.cs" />
+    <Compile Include="Gavião.cs" />
+    <Compile Include="Mamifero.cs" />
+    <Compile Include="Ordena.cs" />
+    <Compile Include="Passaro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
