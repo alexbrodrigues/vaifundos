@@ -43,6 +43,35 @@ namespace Batalha_Naval
                         {
                             War_ship.Blindagem = War_ship.Blindagem - atacar;
                         }
+                        else
+                        {
+                            if (this.Estado.Equals(EstadoNavio.Inoperante))
+                            {
+                                Console.WriteLine("Não é possivel atacar Navio se encontra inoperante!");
+                                War_ship.Blindagem = 0;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (War_ship.Equals(EstadoNavio.Perfeito))
+                {
+                    War_ship.Estado = EstadoNavio.Danificado;
+                }
+                else
+                {
+                    if (War_ship.Equals(EstadoNavio.Danificado))
+                    {
+                        War_ship.Estado = EstadoNavio.MuitoDanificado;
+                    }
+                    else
+                    {
+                        if (War_ship.Equals(EstadoNavio.MuitoDanificado))
+                        {
+                            War_ship.Estado = EstadoNavio.Inoperante;
+                        }
                     }
                 }
             }
