@@ -8,8 +8,26 @@ namespace Batalha_Naval
 {
     abstract class NaviodeGuerra: Navio
     {
-        private float blindagem;
-        private float ataque;
+        protected float blindagem;
+
+        public float Blindagem
+        {
+            get { return blindagem; }
+            set { blindagem = value; }
+        }
+        protected float ataque;
+
+        public float Ataque
+        {
+            get { return ataque; }
+            set { ataque = value; }
+        }
+
+        public NaviodeGuerra(float blind, float Ataque, string Name, int tripulantes) : base (Name, tripulantes)
+        {
+            blindagem = blind;
+            ataque = Ataque;
+        }
 
         public abstract void atacar(NaviodeGuerra Triller);
     }
