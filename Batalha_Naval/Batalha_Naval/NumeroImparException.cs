@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Batalha_Naval
 {
-    interface IPodeOrdenar
+    class NumeroImparException : Exception
     {
-        public bool Ordenar(Object ordenador);
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Batalha_Naval
 {
-    class Cruzador: NaviodeGuerra
+    class Cruzador: NaviodeGuerra, IPodeOrdenar
     {
         private int qtdCanhoes;
 
@@ -75,6 +75,14 @@ namespace Batalha_Naval
                     }
                 }
             }
+        }
+        public bool Ordenar(IPodeOrdenar Cruzader)
+        {
+            if (this.qtdCanhoes > ((Cruzador)Cruzader).qtdCanhoes)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

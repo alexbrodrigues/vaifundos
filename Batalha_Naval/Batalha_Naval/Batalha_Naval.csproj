@@ -46,6 +46,7 @@
     <Compile Include="Navio.cs" />
     <Compile Include="NaviodeGuerra.cs" />
     <Compile Include="NavioMercante.cs" />
+    <Compile Include="NumeroImparException.cs" />
     <Compile Include="PortaAvioes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
